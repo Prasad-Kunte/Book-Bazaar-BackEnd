@@ -1,12 +1,13 @@
 package com.bookbazaar.cntr;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.bookbazaar.model.Book;
 import com.bookbazaar.service.BookService;
 
@@ -28,6 +29,10 @@ public class BookController {
 	@GetMapping(value = {"/Books/{bookId}"})
 	public Book userGet(@PathVariable int bookId) {
 		return bookService.getById(bookId);
+	}
+	@GetMapping(value = {"/getallbook"})
+	public List<Book> productList(){
+		return bookService.getAll();
 	}
 
 }

@@ -24,8 +24,8 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public User getById(int id) {
-		Optional<User> opt = userDao.findById(id);
+	public User getById(int userId) {
+		Optional<User> opt = userDao.findById(userId);
 		if(opt.isPresent()) {
 			return opt.get();
 		}

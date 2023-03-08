@@ -30,15 +30,15 @@ public class AutherController {
 		autherService.modify(auther);
 		return "success";
 	}
-	@DeleteMapping(value = {"/deleteauther/{id}"})
-	public String autherDelete(@PathVariable int id) {
+	@DeleteMapping(value = {"/deleteauther/{autherId}"})
+	public String autherDelete(@PathVariable int autherId) {
 		System.out.println("first delete");
-		autherService.removeById(id);
+		autherService.removeById(autherId);
 		return "success";
 	}
-	@GetMapping(value = {"/getauther/{id}"})
-	public Auther autherGet(@PathVariable int id) {
-		return autherService.getById(id);
+	@GetMapping(value = {"/getauther/{autherId}"})
+	public Auther autherGet(@PathVariable int autherId) {
+		return autherService.getById(autherId);
 	}
 	@GetMapping(value = {"/getallauther"})
 	public List<Auther> productList(){

@@ -11,14 +11,14 @@ import lombok.Data;
 public class Auther {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private int autherId;
 	private String autherName;
 	private String country;
 	public int getId() {
-		return id;
+		return autherId;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setId(int autherId) {
+		this.autherId = autherId;
 	}
 	public String getAutherName() {
 		return autherName;

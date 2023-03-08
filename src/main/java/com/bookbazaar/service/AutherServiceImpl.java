@@ -28,14 +28,14 @@ public class AutherServiceImpl implements AutherService{
 	}
 
 	@Override
-	public void removeById(int id) {
-		autherDao.deleteById(id);
+	public void removeById(int autherId) {
+		autherDao.deleteById(autherId);
 		
 	}
 
 	@Override
-	public Auther getById(int id) {
-		Optional<Auther> opt = autherDao.findById(id);
+	public Auther getById(int autherId) {
+		Optional<Auther> opt = autherDao.findById(autherId);
 		if(opt.isPresent()) {
 			return opt.get();
 		}

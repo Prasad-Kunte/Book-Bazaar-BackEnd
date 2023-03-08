@@ -26,8 +26,8 @@ public class UserController {
 		return "success";
 	}
 	
-	@GetMapping(value = {"/profile/{id}"})
-	public User userGet(@PathVariable int id) {
-		return userService.getById(id);
+	@GetMapping(value = {"/profile/{userId}"})
+	public User userGet(@PathVariable int userId) {
+		return userService.getById(userId);
 	}
 }

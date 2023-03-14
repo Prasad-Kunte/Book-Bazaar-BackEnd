@@ -1,9 +1,14 @@
 package com.bookbazaar.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import lombok.Data;
 @Data
 @Entity
@@ -17,36 +22,30 @@ public class User {
 	private String lname;
 	private String email;
 	private String mobno;
-	private String state;
-	private String city;
-	private String pincode;
 	private String password;
-	private String Address;
-	private String role;
-	public String getState() {
-		return state;
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_user_address_id")
+	private Address address;
+	public Address getAddress() {
+		return address;
 	}
-	public void setState(String state) {
-		this.state = state;
+	public void setAddress(Address address) {
+		this.address = address;
 	}
-	public String getCity() {
-		return city;
+	@ManyToOne
+    @JoinColumn(name = "fk_User_Role1_id")
+	private Role role;
+	public Role getRole() {
+		return role;
 	}
-	public void setCity(String city) {
-		this.city = city;
+	public void setRole(Role role) {
+		this.role = role;
+	}	
+	public int getUserId() {
+		return userId;
 	}
-	public String getPincode() {
-		return pincode;
-	}
-	public void setPincode(String pincode) {
-		this.pincode = pincode;
-	}
-	
-	public String getAddress() {
-		return Address;
-	}
-	public void setAddress(String address) {
-		Address = address;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 	public String getPassword() {
 		return password;
@@ -85,11 +84,6 @@ public class User {
 	public void setMobno(String mobno) {
 		this.mobno = mobno;
 	}
-	public String getRole() {
-		return role;
-	}
-	public void setRole(String role) {
-		this.role = role;
-	}
+	
 
 }

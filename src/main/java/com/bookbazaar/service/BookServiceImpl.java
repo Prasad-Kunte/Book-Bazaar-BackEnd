@@ -26,14 +26,14 @@ public class BookServiceImpl implements BookService {
 	}
 
 	@Override
-	public void removeById(int bookId) {
-		bookDao.deleteById(bookId);
+	public void removeByBook_Id(int book_Id) {
+		bookDao.deleteById(book_Id);
 		
 	}
 
 	@Override
-	public Book getById(int bookId) {
-		Optional<Book> opt = bookDao.findById(bookId);
+	public Book getByBook_Id(int book_Id) {
+		Optional<Book> opt = bookDao.findById(book_Id);
 		if(opt.isPresent()) {
 			return opt.get();
 		}
@@ -48,6 +48,8 @@ public class BookServiceImpl implements BookService {
 		System.out.println("brand");
 		return lst;
 	}
+
+	
 
 //	@Override
 //	public List<Book> getAllByTitle(String title) {

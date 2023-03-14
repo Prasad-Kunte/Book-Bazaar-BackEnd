@@ -6,8 +6,8 @@ import com.bookbazaar.model.Book;
 public interface BookService {
 	void addBook(Book book);
 	void modify(Book book);
-	void removeById(int bookId);
-	Book getById(int bookId);
+	void removeByBook_Id(int book_Id);
+	Book getByBook_Id(int book_Id);
 	List<Book> getAll();
 //	List<Book> getAllByTitle(String title);
 //	List<Book> getAllByCatagory(String catagory);

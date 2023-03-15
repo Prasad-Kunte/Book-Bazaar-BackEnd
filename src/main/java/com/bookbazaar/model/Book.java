@@ -18,29 +18,29 @@ public class Book {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int book_Id;
-	private String book_title;
+	private String booktitle;
 	@ManyToOne
     @JoinColumn(name = "fk_Book_autherId")
 	private Auther auther;
 	public String getBook_type() {
-		return book_type;
+		return booktype;
 	}
-	public void setBook_type(String book_type) {
-		this.book_type = book_type;
+	public void setBook_type(String booktype) {
+		this.booktype = booktype;
 	}
-	private String book_genre;
-	private String book_language;
-	private String book_desc;
-	private String book_type;
-	private float book_MRP;
-	private float book_price;
-	private String book_locality;
-	private String book_img;
+	private String bookgenre;
+	private String booklanguage;
+	private String bookdesc;
+	private String booktype;
+	private float bookMRP;
+	private float bookprice;
+	private String booklocality;
+	private String bookimg;
 	public String getBook_img() {
-		return book_img;
+		return bookimg;
 	}
-	public void setBook_img(String book_img) {
-		this.book_img = book_img;
+	public void setBook_img(String bookimg) {
+		this.bookimg = bookimg;
 	}
 	@ManyToOne
     @JoinColumn(name = "fk_Book_userId")
@@ -52,11 +52,11 @@ public class Book {
 	public void setBook_Id(int book_Id) {
 		this.book_Id = book_Id;
 	}
-	public String getBook_title() {
-		return book_title;
+	public String getBooktitle() {
+		return booktitle;
 	}
-	public void setBook_title(String book_title) {
-		this.book_title = book_title;
+	public void setBooktitle(String booktitle) {
+		this.booktitle = booktitle;
 	}
 	public Auther getAuther() {
 		return auther;
@@ -64,41 +64,53 @@ public class Book {
 	public void setAuther(Auther auther) {
 		this.auther = auther;
 	}
-	public String getBook_genre() {
-		return book_genre;
+	public String getBookgenre() {
+		return bookgenre;
 	}
-	public void setBook_genre(String book_genre) {
-		this.book_genre = book_genre;
+	public void setBookgenre(String bookgenre) {
+		this.bookgenre = bookgenre;
 	}
-	public String getBook_language() {
-		return book_language;
+	public String getBooklanguage() {
+		return booklanguage;
 	}
-	public void setBook_language(String book_language) {
-		this.book_language = book_language;
+	public void setBooklanguage(String booklanguage) {
+		this.booklanguage = booklanguage;
 	}
-	public String getBook_desc() {
-		return book_desc;
+	public String getBookdesc() {
+		return bookdesc;
 	}
-	public void setBook_desc(String book_desc) {
-		this.book_desc = book_desc;
+	public void setBookdesc(String bookdesc) {
+		this.bookdesc = bookdesc;
 	}
-	public float getBook_MRP() {
-		return book_MRP;
+	public String getBooktype() {
+		return booktype;
 	}
-	public void setBook_MRP(float book_MRP) {
-		this.book_MRP = book_MRP;
+	public void setBooktype(String booktype) {
+		this.booktype = booktype;
 	}
-	public float getBook_price() {
-		return book_price;
+	public float getBookMRP() {
+		return bookMRP;
 	}
-	public void setBook_price(float book_price) {
-		this.book_price = book_price;
+	public void setBookMRP(float bookMRP) {
+		this.bookMRP = bookMRP;
 	}
-	public String getBook_locality() {
-		return book_locality;
+	public float getBookprice() {
+		return bookprice;
 	}
-	public void setBook_locality(String book_locality) {
-		this.book_locality = book_locality;
+	public void setBookprice(float bookprice) {
+		this.bookprice = bookprice;
+	}
+	public String getBooklocality() {
+		return booklocality;
+	}
+	public void setBooklocality(String booklocality) {
+		this.booklocality = booklocality;
+	}
+	public String getBookimg() {
+		return bookimg;
+	}
+	public void setBookimg(String bookimg) {
+		this.bookimg = bookimg;
 	}
 	public User getUser() {
 		return user;

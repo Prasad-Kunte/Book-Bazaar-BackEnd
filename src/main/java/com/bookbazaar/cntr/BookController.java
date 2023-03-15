@@ -38,7 +38,7 @@ public class BookController {
 		  String[] parts = base64Image.split(",");
 		  String imageType = parts[0].split("/")[1];
 		  String imageData = parts[1];
-		  String path1="C:/Users/PRASAD KUNTE/Desktop/Book Bazaar/bookbazaar/public/images/"+book.getBook_title()+"." + imageType;
+		  String path1="C:/Users/PRASAD KUNTE/Desktop/Book Bazaar/bookbazaar/public/images/"+book.getBooktitle()+"." + imageType;
 		  String[] path2=path1.split(";");
 		  System.out.println(path2[1]);
 		  System.out.println(path2[0]);
@@ -54,7 +54,7 @@ public class BookController {
 		  Path path = Paths.get(path2[0]);
 		  try {
 		    Files.write(path, bytes);
-		    book.setBook_img("/images/"+book.getBook_title()+"."+type1[0]);
+		    book.setBook_img("/images/"+book.getBooktitle()+"."+type1[0]);
 			bookService.addBook(book);
 			return  new ResponseEntity<String>("Hello World", new HttpHeaders(), 200);
 		  } catch (IOException e) {
@@ -73,9 +73,21 @@ public class BookController {
 	public Book userGet(@PathVariable int bookId) {
 		return bookService.getByBook_Id(bookId);
 	}
+	@GetMapping(value = {"/Booksuu/{booklike}"})
+	public List<Book> bookList(@PathVariable String booklike) {
+		return bookService.getBylike(booklike);
+	}
+	@GetMapping(value = {"/Booksgenre/{book}"})
+	public List<Book> bookListgenre(@PathVariable String book) {
+		return bookService.getByGenre(book);
+	}
 	@GetMapping(value = {"/getallbook"})
 	public List<Book> productList(){
 		return bookService.getAll();
+	}
+	@GetMapping(value = {"/getallbookgenre"})
+	public List<String> genreList(){
+		return bookService.selectDistinctGenre();
 	}
 
 }

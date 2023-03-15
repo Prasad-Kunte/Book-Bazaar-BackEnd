@@ -49,6 +49,30 @@ public class BookServiceImpl implements BookService {
 		return lst;
 	}
 
+	@Override
+	public List<String> selectDistinctGenre() {
+		
+		return bookDao.findDistinctGenre();
+	}
+
+	@Override
+	public List<Book> getBylike(String s) {
+		Iterable<Book> itr = bookDao.findByBookdescContains(s);
+		List<Book> lst = new ArrayList<Book>();
+		itr.forEach(ele->lst.add(ele));
+		System.out.println("brand");
+		return lst;
+	}
+
+	@Override
+	public List<Book> getByGenre(String s) {
+		Iterable<Book> itr = bookDao.findByBookgenre(s);
+		List<Book> lst = new ArrayList<Book>();
+		itr.forEach(ele->lst.add(ele));
+		System.out.println("brand");
+		return lst;
+	}
+
 	
 
 //	@Override

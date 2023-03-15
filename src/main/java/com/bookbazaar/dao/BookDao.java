@@ -12,6 +12,10 @@ import com.bookbazaar.model.Book;
 
 @Repository
 public interface BookDao extends CrudRepository<Book , Integer> {
+	@Query(value="SELECT DISTINCT u.bookgenre FROM book u",nativeQuery=true)
+    List<String> findDistinctGenre();
+	List<Book> findByBookdescContains(String title);
+	List<Book> findByBookgenre(String title);
 
 //	public List<Book> findByTitle(@Param(value = "title") String title);
 //	public List<Book> findByCatagory(@Param(value = "catagory") String catagory);

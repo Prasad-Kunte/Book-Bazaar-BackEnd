@@ -9,6 +9,9 @@ public interface BookService {
 	void removeByBook_Id(int book_Id);
 	Book getByBook_Id(int book_Id);
 	List<Book> getAll();
+	List<Book> getBylike(String s);
+	List<Book> getByGenre(String s);
+	List<String> selectDistinctGenre();
 //	List<Book> getAllByTitle(String title);
 //	List<Book> getAllByCatagory(String catagory);
 //	List<Book> getAllByGenre(String genre);
